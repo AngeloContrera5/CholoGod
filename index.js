@@ -9,7 +9,6 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT); 
 
-
 /////////////////////CONSTANTES2/////////////////////
 const Discord = require("discord.js"); 
 Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
@@ -25,7 +24,7 @@ function presence(){
     client.user.setPresence({
         status      : "online",
         activity    : {
-            name    : "codigo lagarto",
+            name    : "codigo 🐊",
             type    : "PLAYING"
         }
     })
@@ -46,7 +45,7 @@ function presence(){
   if(message.content.startsWith("hola")) {
    message.channel.send("Hola UwU")
   }
-   if(message.content.startsWith("bye")) {
+  if(message.content.startsWith("bye")) {
    message.channel.send("Yo también safo loco")
   }
   if(message.content.startsWith("jaja")) {
@@ -56,8 +55,11 @@ function presence(){
         //envía una imagen aleatoria del arreglo 
     message.channel.send(jaja[random]);
   }
-   if(message.content.startsWith("ok")) {
+   if(message.content === "ok") {
    message.channel.send("YA PAPI CHVRE TU COMENTARIZZZZZZZZZZZZZZ")
+  }
+  if(message.content === "Momento risa") {
+   message.channel.send("* c ríe *")
   }
   if(message.content === "ya"){
       var ya =   ["https://media.discordapp.net/attachments/738235429060345908/738250633710403594/FB_IMG_1588879940063.jpg",   "https://media.discordapp.net/attachments/738538710777331732/743515600877387817/FB_IMG_1597206513658.jpg?width=683&height=658"]
@@ -98,6 +100,11 @@ function presence(){
       const img = new Discord.MessageAttachment ("https://media.discordapp.net/attachments/738486906945274018/738817334378233907/4.jpeg")
       message.channel.send(img);
   }
+  if(message.content === "go"){
+    const img = new Discord.MessageAttachment(
+      "https://media.discordapp.net/attachments/771527095356489748/830217847329783888/2Q.png")
+      message.channel.send(img);
+  }
   /////////////////////EMBEDS/////////////////////
 
   if(!message.content.startsWith(prefix)) return;
@@ -105,6 +112,9 @@ function presence(){
   const args = message.content.slice(prefix.length).trim().split(/ + /g);
   const command = args.shift().toLowerCase();
 
+  if(command === "ping"){
+    message.channel.send("Pong!")
+  }
   if(command === "help"){
       const embed = new Discord.MessageEmbed()
       .setTitle("Comandos")
@@ -168,6 +178,36 @@ function presence(){
       const img = new Discord.MessageAttachment ("https://media.discordapp.net/attachments/738235429060345908/738249897647669258/images_81.jpeg")
       message.channel.send(img);
   }
+
+///////////////// COMANDOS PARA SERVIDOR DE NATE /////////////////
+
+  if(command === "manuel"){
+      const img = new Discord.MessageAttachment ("https://pbs.twimg.com/profile_images/973865461816455168/nvPsK0CL_400x400.jpg")
+      message.channel.send(img);
+  }
+  
+  if(command === "valentino"){
+      const img = new Discord.MessageAttachment ("https://i.imgur.com/yaJdYGl.png")
+      message.channel.send(img);
+  } 
+  if(command === "ling"){
+      const img = new Discord.MessageAttachment ("https://tiempogamer.com/download/multimedia.normal.866a94b094cc7f71.416275656c6f2047616d65725f6e6f726d616c2e6a7067.jpg")
+      message.channel.send(img);
+  }
+  if(command === "n4te"){
+      const img = new Discord.MessageAttachment ("https://images-ext-2.discordapp.net/external/vtW4JTsQUpnAglDskyY2c1DXccc9Q2CjnQHfMZB_rqU/https/i1.sndcdn.com/artworks-5wlKUV5TXCGuALCy-zLVWgg-t500x500.jpg")
+      message.channel.send(img);
+  } 
+  if(command === "jea"){
+      const img = new Discord.MessageAttachment ("https://media.discordapp.net/attachments/787542717088399360/838618457440256050/AAA.jpg?width=647&height=657")
+      message.channel.send(img);
+  }
+  
+
+/////////////////FIN /////////////////
+
+
+  
   if(command === "tusa"){
       const img = new Discord.MessageAttachment ("https://media.discordapp.net/attachments/738235429060345908/738250633936633947/FB_IMG_1588486789426.jpg? width=946&height=658")
       message.channel.send(img);
@@ -248,7 +288,6 @@ function presence(){
     message.channel.send(embed)
   }
 //////////////////////  ZONA DE PRUEBAS  //////////////////////
-
 
 
 
