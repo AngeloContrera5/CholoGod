@@ -441,14 +441,46 @@ client.on('message', message => {
 	}
 	//////////////////////  ZONA DE PRUEBAS  //////////////////////
 
-	var chologod = client.user.username;
+	//var chologod = client.user.username;
 
-	if (command === '') {
-		const img = new Discord.MessageAttachment(
-			'https://media.discordapp.net/attachments/738486906945274018/738817344737902612/10.jpeg'
-		);
-		message.channel.send(img);
-	}
+  //console.log(chologod);
+
+	if (command === 'react') {
+    let man = "🚹";
+    let woman = "🚺";
+
+		message.channel.send('Escoje tu genero xd').then(msg => {
+        msg.react(man);
+        msg.react(woman);
+
+        const filter = (reaction, user) => {
+          return [man,woman].includes(reaction.emoji.name) && user.id == message.author.id;
+        };
+
+        msg.awaitReactions(filter,{max:1,time:60000})
+              .then(collection => {
+                 const reaction = collection.first();
+
+                  if(reaction.emoji.name === man) {
+                      let idMan = message.guild.roles.cache.get("741454569959063618");
+                      console.log(idMan);
+                      //poner el rol de hombre
+
+
+
+
+                  }else if(reaction.emoji.name === woman){
+                      let idWoman = message.guild.roles.cache.get("736991847246856203");
+                      console.log(idWoman);
+                      //poner el rol de mujer
+
+
+
+
+                  }
+          })
+    });
+	};
 
 	//////////////////////  FIN DE ZONA DE PRUEBAS  //////////////////////
 
