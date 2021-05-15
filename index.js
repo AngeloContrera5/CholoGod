@@ -444,7 +444,7 @@ client.on('message', message => {
 	//var chologod = client.user.username;
 
   //console.log(chologod);
-
+/*
 	if (command === 'react') {
     let man = "🚹";
     let woman = "🚺";
@@ -462,8 +462,10 @@ client.on('message', message => {
                  const reaction = collection.first();
 
                   if(reaction.emoji.name === man) {
-                      let idMan = message.guild.roles.cache.get("741454569959063618");
-                      console.log(idMan);
+                      let idMan = message.guild.roles.cache.find(r => r.name === "CAMPESINOS");
+                      let miembro  = client.user.username.;
+                      console.log(miembro);
+                      
                       //poner el rol de hombre
 
 
@@ -481,7 +483,7 @@ client.on('message', message => {
           })
     });
 	};
-
+*/
 	//////////////////////  FIN DE ZONA DE PRUEBAS  //////////////////////
 
 	////////////TODO CODIGO ARRIBA - CON ESTO CIERRA
