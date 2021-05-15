@@ -167,7 +167,7 @@ client.on('message', message => {
 			)
 			.addField(
 				'Si necesitas que un amigo entre al grupo puedes colocar el comando `.invitar` para `generar un link de invitación` del grupo de INCA NATION',
-				'Disfruta del servidor :)'
+				'Disfruta del servidor :D'
 			)
 			.addField(
 				'Streamers: ',
@@ -199,7 +199,7 @@ client.on('message', message => {
 			)
 			.addField(
 				'Si necesitas que un amigo entre al grupo puedes colocar el comando `.invitar` para `generar un link de invitación` del grupo de INCA NATION',
-				'Disfruta del servidor :)'
+				'Disfruta del servidor :D'
 			)
 			.addField(
 				'Streamers: ',
@@ -251,6 +251,31 @@ client.on('message', message => {
 			.setImage('https://i.imgur.com/mTNHLz3.jpg');
 		message.channel.send(embed);
 	}
+    if (command === 'youtube'){
+        const embed = new Discord.MessageEmbed()
+            .setTitle('Youtube en Discord - Bot Discord Activites')
+            .setColor(0x2a80fb)
+            .setDescription(
+            'Ahora puedes disfrutar de un bot que puede poner Youtube sin salir de la app de Discord!'
+            )
+            .addField('Comando:',
+             '`/activity [#escoger el canal de voz] YouTube Together`'
+            )
+            .addField('Luego el bot enviará un link de invitación para que tu y tus amigos puedan entrar a ver Youtube juntos',
+            'Disfruta del bot :D'
+            )
+            .setAuthor(client.user.username, client.user.avatarURL())
+            .setImage('https://i.imgur.com/YMmDZGC.png');
+        message.channel.send(embed)
+    }
+
+
+
+
+
+
+
+
 	/////////////////////GENERA LINK DE INVITACION AL GRUPO/////////////////////
 	if (command === 'invitar') {
 		message.channel.send('https://discord.gg/a7zGZH7BUE');
