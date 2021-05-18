@@ -70,6 +70,10 @@ client.on('message', message => {
 	if (message.content === 'Momento risa') {
 		message.channel.send('* c ríe *');
 	}
+  if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
+    message.channel.send('Que fue xd. Recuerda que puedes ver los comandos con `.help` ó `.ayuda` :D');
+  }
+
 	if (message.content === 'ya') {
 		var ya = [
 			'https://media.discordapp.net/attachments/738235429060345908/738250633710403594/FB_IMG_1588879940063.jpg',
@@ -121,8 +125,6 @@ client.on('message', message => {
 		//envía una imagen aleatoria del arreglo
 		message.channel.send(zeta[random]);
 	}
-	
-	
 	if (message.content === 'silencio') {
 		const img = new Discord.MessageAttachment(
 			'https://media.discordapp.net/attachments/749389967507062945/824083978536747028/IMG-20210323-WA0006.jpg'
@@ -169,6 +171,10 @@ client.on('message', message => {
 				'Si necesitas que un amigo entre al grupo puedes colocar el comando `.invitar` para `generar un link de invitación` del grupo de INCA NATION',
 				'Disfruta del servidor :D'
 			)
+      .addField(
+        'NUEVA FUNCIÓN: YOUTUBE DENTRO DE DISCORD - Gracias al bot Discord Activites',
+        'Si deseas probarlo coloca el comando `.youtube`'
+      )
 			.addField(
 				'Streamers: ',
 				'[AckerBoy](https://www.facebook.com/gaming/ackerboytv)',
@@ -179,7 +185,6 @@ client.on('message', message => {
 				'[AngeloContreras](https://www.facebook.com/gaming/AngeloContrerasss)',
 				true
 			)
-			.setAuthor(client.user.username, client.user.avatarURL())
 			.setThumbnail(
 				'https://media.giphy.com/media/U7bo3ZBR8lcKSmGdlT/giphy.gif'
 			);
@@ -201,6 +206,10 @@ client.on('message', message => {
 				'Si necesitas que un amigo entre al grupo puedes colocar el comando `.invitar` para `generar un link de invitación` del grupo de INCA NATION',
 				'Disfruta del servidor :D'
 			)
+      .addField(
+        'NUEVA FUNCIÓN: YOUTUBE DENTRO DE DISCORD - Gracias al bot Discord Activites',
+        'Si deseas probarlo coloca el comando `.youtube`'
+      )
 			.addField(
 				'Streamers: ',
 				'[AckerBoy](https://www.facebook.com/gaming/ackerboytv)',
@@ -211,7 +220,6 @@ client.on('message', message => {
 				'[AngeloContreras](https://www.facebook.com/gaming/AngeloContrerasss)',
 				true
 			)
-			.setAuthor(client.user.username, client.user.avatarURL())
 			.setThumbnail(
 				'https://media.giphy.com/media/U7bo3ZBR8lcKSmGdlT/giphy.gif'
 			);
@@ -230,7 +238,6 @@ client.on('message', message => {
 				'[@willi02](https://www.instagram.com/willii02/)',
 				true
 			)
-			.setAuthor(client.user.username, client.user.avatarURL())
 			.setImage('https://i.imgur.com/TBI3n7h.jpg');
 		message.channel.send(embed);
 	}
@@ -247,14 +254,14 @@ client.on('message', message => {
 				'[@angelocontrera5](https://www.instagram.com/angelocontrera5/)',
 				true
 			)
-			.setAuthor(client.user.username, client.user.avatarURL())
+			//.setAuthor(client.user.username, client.user.avatarURL())
 			.setImage('https://i.imgur.com/mTNHLz3.jpg');
 		message.channel.send(embed);
 	}
     if (command === 'youtube'){
         const embed = new Discord.MessageEmbed()
             .setTitle('Youtube en Discord - Bot Discord Activites')
-            .setColor(0x2a80fb)
+            .setColor(0xff1313)
             .setDescription(
             'Ahora puedes disfrutar de un bot que puede poner Youtube sin salir de la app de Discord!'
             )
@@ -264,17 +271,10 @@ client.on('message', message => {
             .addField('Luego el bot enviará un link de invitación para que tu y tus amigos puedan entrar a ver Youtube juntos',
             'Disfruta del bot :D'
             )
-            .setAuthor(client.user.username, client.user.avatarURL())
-            .setImage('https://i.imgur.com/YMmDZGC.png');
+            //.setAuthor(client.user.username, client.user.avatarURL())
+            .setImage('https://i.imgur.com/TrXVNLq.gif');
         message.channel.send(embed)
     }
-
-
-
-
-
-
-
 
 	/////////////////////GENERA LINK DE INVITACION AL GRUPO/////////////////////
 	if (command === 'invitar') {
@@ -291,6 +291,27 @@ client.on('message', message => {
 	if (command === 'candia') {
 		const img = new Discord.MessageAttachment(
 			'https://media.discordapp.net/attachments/738235429060345908/738249897647669258/images_81.jpeg'
+		);
+		message.channel.send(img);
+	}
+
+  if (command === 'sumari') {
+		const img = new Discord.MessageAttachment(
+			'https://media.discordapp.net/attachments/749389967507062945/844242640580640768/ESUQrBAX0AIPBHM.jpg'
+		);
+		message.channel.send(img);
+	}
+
+  if (command === 'fernando') {
+		const img = new Discord.MessageAttachment(
+			'https://media.discordapp.net/attachments/749389967507062945/844243396365123614/unknown.png'
+		);
+		message.channel.send(img);
+	}
+
+  if (command === 'jefferson') {
+		const img = new Discord.MessageAttachment(
+			'https://media.discordapp.net/attachments/749389967507062945/844243897956958238/la-caida-de-edgar-860.jpg'
 		);
 		message.channel.send(img);
 	}
@@ -464,52 +485,10 @@ client.on('message', message => {
 			.setColor('RANDOM');
 		message.channel.send(embed);
 	}
-	//////////////////////  ZONA DE PRUEBAS  //////////////////////
-
-	//var chologod = client.user.username;
-
-  //console.log(chologod);
-/*
-	if (command === 'react') {
-    let man = "🚹";
-    let woman = "🚺";
-
-		message.channel.send('Escoje tu genero xd').then(msg => {
-        msg.react(man);
-        msg.react(woman);
-
-        const filter = (reaction, user) => {
-          return [man,woman].includes(reaction.emoji.name) && user.id == message.author.id;
-        };
-
-        msg.awaitReactions(filter,{max:1,time:60000})
-              .then(collection => {
-                 const reaction = collection.first();
-
-                  if(reaction.emoji.name === man) {
-                      let idMan = message.guild.roles.cache.find(r => r.name === "CAMPESINOS");
-                      let miembro  = client.user.username.;
-                      console.log(miembro);
-                      
-                      //poner el rol de hombre
 
 
 
-
-                  }else if(reaction.emoji.name === woman){
-                      let idWoman = message.guild.roles.cache.get("736991847246856203");
-                      console.log(idWoman);
-                      //poner el rol de mujer
-
-
-
-
-                  }
-          })
-    });
-	};
-*/
-	//////////////////////  FIN DE ZONA DE PRUEBAS  //////////////////////
+  
 
 	////////////TODO CODIGO ARRIBA - CON ESTO CIERRA
 });

@@ -1,7 +1,7 @@
 {
   "name": "CholoGod",
   "version": "1.0.0",
-  "description": "Bot con distintas funciones creado principalmente para el servidor de Cholo Army",
+  "description": "Bot con distintas funciones creado principalmente para el servidor de Discord INCA NATION",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
