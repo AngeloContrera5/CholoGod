@@ -18,7 +18,6 @@ const client = new Discord.Client();
 const config = require('./config.json');
 
 /////////////////////VARIABLES/////////////////////
-
 let prefix = config.prefix;
 /////////////////////PRESENCIA/////////////////////
 
@@ -73,6 +72,49 @@ client.on('message', message => {
   if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
     message.channel.send('Que fue xd. Recuerda que puedes ver los comandos con `.help` ó `.ayuda` :D');
   }
+/*
+const Distube = require('distube')
+client.distube = new Distube(client, {
+    emitNewSongOnly: true,
+    searchSongs: false,
+    leaveOnStop: true,
+    leaveOnFinish: true,
+    leaveOnEmpty: true
+  });
+
+  client.distube.on("addList", (playList) => {
+    message.channel.send(`Playlist añadida: **${playlist.name}** - **${playlist.songs.length}** canciones`)
+  })
+
+  client.distube.on("addSong", (song) => {
+    message.channel.send(`Cancion añadida: **${song.name}** - **${song.formattedDuration}**`)
+  })
+  
+  client.distube.on("playSong", (playsong) => {
+    message.channel.send(`Reproduciendo ahora: **${playsong.name}** - **${playsong.formattedDuration}**`)
+  })
+
+  client.distube.on("playList", (playlist) => {
+    message.channel.send(`Reproduciendo playlist: **${playlist.name}** - **${playsong.formattedDuration}**`)
+  })
+
+  client.distube.on("error", (error) => {
+    console.log(error);
+  })
+
+     if(!cancion)
+          return message.channel.send("Debes poner una cancion pe loco .__.")
+
+     if(!message.member.voice.channel)
+          return message.channel.send("Debes estar en un canal de voz para poner la bulla ps, eso es inicial mano")
+
+    if(message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id)
+          return message.channel.send("Debes estar en el canal de voz donde estoy yo para poner la bulla ps, eso es inicial mano")      
+
+
+    client.distube.play(message, cancion)
+
+*/
 
 	if (message.content === 'ya') {
 		var ya = [
@@ -118,11 +160,7 @@ client.on('message', message => {
 			'https://media.discordapp.net/attachments/749389967507062945/749392178991726622/9847e210-6b5e-4645-8aa2-01d861d4a119.jpeg',
 			'https://media.discordapp.net/attachments/749389967507062945/749392182703816704/a09feb05-0dfc-4c97-b0bb-71cadd225d22.jpeg'
 		];
-
-		//variable "random" escoge un valor de acuerdo al tamaño en forma aleatoria del arreglo "zeta"
 		var random = Math.floor(Math.random() * zeta.length);
-
-		//envía una imagen aleatoria del arreglo
 		message.channel.send(zeta[random]);
 	}
 	if (message.content === 'silencio') {
@@ -296,10 +334,12 @@ client.on('message', message => {
 	}
 
   if (command === 'sumari') {
-		const img = new Discord.MessageAttachment(
-			'https://media.discordapp.net/attachments/749389967507062945/844242640580640768/ESUQrBAX0AIPBHM.jpg'
-		);
-		message.channel.send(img);
+		var sumari = [
+			'https://media.discordapp.net/attachments/749389967507062945/844242640580640768/ESUQrBAX0AIPBHM.jpg',
+      'https://media.discordapp.net/attachments/693896578288713780/844430211000958996/unknown.png'
+		];
+		var random = Math.floor(Math.random() * sumari.length);
+		message.channel.send(sumari[random]);
 	}
 
   if (command === 'fernando') {
@@ -486,11 +526,14 @@ client.on('message', message => {
 		message.channel.send(embed);
 	}
 
-
-
   
+
+
+
 
 	////////////TODO CODIGO ARRIBA - CON ESTO CIERRA
 });
+
+
 
 client.login(process.env.TOKEN).catch(() => console.log('Invalid token.'));
